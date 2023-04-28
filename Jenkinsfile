@@ -22,5 +22,15 @@ pipeline {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
+       stage('Cat README.md'){
+           when {
+               branch "fix-*" 
+           }
+           steps {
+               sh '''
+                  cat README.md
+               '''
+           }
+       }
     }
 }
