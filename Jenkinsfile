@@ -51,10 +51,7 @@ pipeline {
             }
         }
        stage('Cat README.md'){
-           when {
-               branch "fix-*" 
-           }
-           steps {
+            steps {
                sh '''
                   cat README.md
                '''
