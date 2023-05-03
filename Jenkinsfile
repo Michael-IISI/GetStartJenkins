@@ -38,7 +38,6 @@ pipeline {
                 echo 'Docker Testing..'
                 sh ''' node --version'''
                 sh 'node --version'
-                sh 'svn --version'
             }
         }
         stage('Deploy') {
