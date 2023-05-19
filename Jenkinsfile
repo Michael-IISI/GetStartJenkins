@@ -1,6 +1,6 @@
+@Library("shared-library")
 pipeline {
     agent any
-
     stages {
         stage('Back-end') {
             agent {
@@ -48,6 +48,11 @@ pipeline {
         stage('Example') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            }
+        }
+        stage('Shared-Library Variables') {
+            steps {
+                sh 'echo hello world'
             }
         }
        stage('Cat README.md'){
