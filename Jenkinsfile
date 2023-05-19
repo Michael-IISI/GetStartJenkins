@@ -59,7 +59,7 @@ pipeline {
         }
         stage('Shared-Library Variables') {
             steps {
-                helloWorld()
+                helloWorld("Michael Li","Friday星期五")
             }
         }
     }
