@@ -2,7 +2,13 @@
 pipeline {
     agent any
     stages {
-        stage('Back-end') {
+        stage('Cat README.md'){
+            steps {
+               sh '''
+                  cat README.md
+               '''
+           }
+       }stage('Back-end') {
             agent {
                 docker { image 'maven:3.9.0-eclipse-temurin-11' }
             }
@@ -52,15 +58,8 @@ pipeline {
         }
         stage('Shared-Library Variables') {
             steps {
-                sh 'echo hello world'
+                helloWorld()
             }
         }
-       stage('Cat README.md'){
-            steps {
-               sh '''
-                  cat README.md
-               '''
-           }
-       }
     }
 }
