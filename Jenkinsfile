@@ -8,7 +8,8 @@ pipeline {
                   cat README.md
                '''
            }
-       }stage('Back-end') {
+       }
+       stage('Back-end') {
             agent {
                 docker { image 'maven:3.9.0-eclipse-temurin-11' }
             }
