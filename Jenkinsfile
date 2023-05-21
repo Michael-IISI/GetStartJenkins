@@ -2,7 +2,7 @@
 pipeline {
     agent any
     stages {
-        stage('Cat README.md'){
+        stage('execute shell Cat README.md'){
             steps {
                sh '''
                   cat README.md
